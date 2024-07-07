@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/ibrt2016/release-test/compare/v1.2.5...v1.3.0) (2024-07-07)
+
+
+### Add Azure Cloud Resource(s)
+
+* update a new reousce 7 ([f411f12](https://github.com/ibrt2016/release-test/commit/f411f1287e583e2064d86a45c56f37a5f0853bdb))
+
 ## [1.2.5](https://github.com/ibrt2016/release-test/compare/v1.2.4...v1.2.5) (2024-07-07)
 
 
