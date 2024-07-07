@@ -18,12 +18,11 @@ jobs:
       uses: cycjimmy/semantic-release-action@v4
       with:  
         extra_plugins: |
-          @semantic-release/changelog@6.0.0
+          conventional-changelog-conventionalcommits
+          @semantic-release/commit-analyzer
+          @semantic-release/release-notes-generator
+          @semantic-release/npm
           @semantic-release/git
-          @semantic-release/commit-analyzer@13.0.0
-          # @semantic-release/release-notes-generator@9.0.3
-          # @semantic-release/github@7.2.3
-          conventional-changelog-eslint
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
         #NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
