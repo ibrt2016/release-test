@@ -2,6 +2,6 @@ resource "" "name" {
   
 }
 
-resource "" "name5" {
+resource "" "name6" {
   
 }
