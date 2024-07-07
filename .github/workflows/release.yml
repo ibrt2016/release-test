@@ -20,7 +20,7 @@ jobs:
         extra_plugins: |
           @semantic-release/changelog@6.0.0
           @semantic-release/git
-          #@semantic-release/commit-analyzer@8.0.1
+          @semantic-release/commit-analyzer@8.0.1
           # @semantic-release/release-notes-generator@9.0.3
           # @semantic-release/github@7.2.3
           conventional-changelog-eslint
