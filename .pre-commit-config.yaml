@@ -1,0 +1,12 @@
+repos:
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.32.0
+    hooks:
+      - id: yamllint
+        args:
+          - --strict
+        additional_dependencies:
+          - yamllint
+        files: '^files/deploymentfiles/.*\.(yaml|yml)$'
+        exclude: '(?i)^(.*\.md|.*\.txt|.*\.conf|.*\.cfg)$'
+        stages: [commit]
