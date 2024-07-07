@@ -1,3 +1,7 @@
 resource "" "name" {
   
 }
+
+resource "" "name" {
+  
+}
