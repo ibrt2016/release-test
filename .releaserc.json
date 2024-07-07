@@ -8,7 +8,7 @@
       [
         "@semantic-release/commit-analyzer",
         {
-          "preset": "eslint",
+          "preset": "conventionalcommits",
           "releaseRules": [
             { "tag": "Breaking", "release": "major" },
             { "tag": "Build", "release": "minor" },
@@ -23,7 +23,7 @@
       [
         "@semantic-release/release-notes-generator",
         {
-          "preset": "eslint",
+          "preset": "conventionalcommits",
           "releaseRules": [
             { "tag": "Breaking", "release": "major" },
             { "tag": "Build", "release": "minor" },
