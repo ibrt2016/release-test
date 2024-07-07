@@ -66,9 +66,9 @@
               { "type": "build", "release": "minor" },
               { "type": "chore", "release": "minor" },
               { "type": "fix", "release": "patch", "section": "Features" },
-              { "type": "new", "release": "minor", "section": "Add Resources", "hidden": false },
-              { "type": "update", "release": "patch", "section": "Update/Fix Resources", "hidden": false },
-              { "type": "delete", "release": "minor", "section": "Delete Resources", "hidden": false },
+              { "type": "new", "release": "minor", "section": "Add Azure Cloud Resource(s)", "hidden": false },
+              { "type": "update", "release": "patch", "section": "Update/Fix Existing Azure Cloud Resource(s)", "hidden": false },
+              { "type": "delete", "release": "minor", "section": "Delete Azure Cloud Resource(s)", "hidden": false },
               { "type": "upgrade", "release": "minor" }
             ]
           } 
