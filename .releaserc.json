@@ -10,13 +10,49 @@
         {
           "preset": "conventionalcommits",
           "releaseRules": [
-            { "tag": "Breaking", "release": "major" },
-            { "tag": "Build", "release": "minor" },
-            { "tag": "Chore", "release": "minor" },
-            { "tag": "Fix", "release": "patch" },
-            { "tag": "New", "release": "minor" },
-            { "tag": "Update", "release": "minor" },
-            { "tag": "Upgrade", "release": "minor" }
+            { "type": "breaking", "release": "major" },
+            { "type": "build", "release": "minor" },
+            { "type": "chore", "release":"minor" },
+            { "type": "fix", "release": "patch" },
+            { "type": "new", "release": "minor" },
+            { "type": "update", "release": "patch" },
+            { "type": "delete", "release": "minor" },
+            { "type": "upgrade", "release": "minor" },
+            {
+              "type": "major",
+              "release": "major"
+          },
+          {
+              "type": "deps",
+              "scope": "major",
+              "release": "major"
+          },
+          {
+              "type": "minor",
+              "release": "minor"
+          },
+          {
+              "type": "deps",
+              "scope": "minor",
+              "release": "minor"
+          },
+          {
+              "type": "patch",
+              "release": "patch"
+          },
+          {
+              "type": "deps",
+              "scope": "patch",
+              "release": "patch"
+          },
+          {
+              "type": "refactor",
+              "release": "minor"
+          },
+          {
+              "scope": "docs",
+              "release": false
+          }
           ]
         }
       ],
@@ -25,13 +61,14 @@
         {
           "preset": "conventionalcommits",
           "releaseRules": [
-            { "tag": "Breaking", "release": "major" },
-            { "tag": "Build", "release": "minor" },
-            { "tag": "Chore", "release": "minor" },
-            { "tag": "Fix", "release": "patch" },
-            { "tag": "New", "release": "minor" },
-            { "tag": "Update", "release": "minor" },
-            { "tag": "Upgrade", "release": "minor" }
+            { "type": "breaking", "release": "major" },
+            { "type": "build", "release": "minor" },
+            { "type": "chore", "release": "minor" },
+            { "type": "fix", "release": "patch", "section": "Features" },
+            { "type": "new", "release": "minor", "section": "Add Resources" },
+            { "type": "update", "release": "minor", "section": "Update/Fix Resources" },
+            { "type": "delete", "release": "minor", "section": "Delete Resources" },
+            { "type": "upgrade", "release": "minor" }
           ]
         }
       ],
