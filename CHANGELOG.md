@@ -1,3 +1,10 @@
+## [1.4.0](https://github.com/ibrt2016/release-test/compare/v1.3.0...v1.4.0) (2024-07-07)
+
+
+### Add Azure Cloud Resource(s)
+
+* **webapp:** add a new webapp ([9c25d6a](https://github.com/ibrt2016/release-test/commit/9c25d6ad4bf18d30dacf577e4ec068832e074b6e))
+
 ## [1.3.0](https://github.com/ibrt2016/release-test/compare/v1.2.5...v1.3.0) (2024-07-07)
 
 
