@@ -21,7 +21,7 @@ jobs:
     - name: Replace single file
       uses: richardrigutins/replace-in-files@v2
       with:
-        files: 'README.md'
+        files: 'main.tf'
         search-text: '<REPLACED-BY-GHA>'
         replacement-text: ${{ github.event.repository.name }}
     - name: Show contents
