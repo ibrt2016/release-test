@@ -23,7 +23,7 @@ jobs:
     - name: replace string in file
       uses: Nambers/ReplaceStringInFile@v1.3        
       with:
-        path: main.tf
+        path: ./main.tf
         oldString: REPLACED_BY_GHA
         #oldStringWin: abc123\)\)
         newString: ${{ github.event.repository.name }}
