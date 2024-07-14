@@ -22,7 +22,7 @@ jobs:
       uses: richardrigutins/replace-in-files@v2
       with:
         files: 'main.tf'
-        search-text: '<REPLACED-BY-GHA>'
+        search-text: '{0}'
         replacement-text: ${{ github.event.repository.name }}
     - name: Show contents
       run: cat main.tf
