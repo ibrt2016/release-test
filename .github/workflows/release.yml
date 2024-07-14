@@ -21,11 +21,13 @@ jobs:
     - name: list 
       run: ls -la
     - name: Find and Replace
-      uses: jacobtomlinson/gha-find-replace@v3
+      uses: Nambers/ReplaceStringInFile@v1
       with:
-        find: "REPLACED_BY_GHA"
-        replace: ${{ github.event.repository.name }}
-        include: "main.tf" # Will match all README.md files in any nested directory
+        path: ${{ github.workspace }}/a.test
+        oldString: REPLACED_BY_GHA
+        #oldStringWin: abc123\)\)
+        newString: ${{ github.event.repository.name }}
+        showFileContent: true
     - name: Replace single file 2
       uses: richardrigutins/replace-in-files@v2
       with:
