@@ -5,7 +5,11 @@ on:
     
 jobs:
   release:
-    runs-on: ubuntu-latest        
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: infrastructure/development        
     permissions:
       contents: write
       pages: write
@@ -14,19 +18,27 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
+    - name: Replace single file
+      uses: richardrigutins/replace-in-files@v2
       with:
-        node-version: 20
-    - name: Semantic Release
-      uses: cycjimmy/semantic-release-action@v4
-      with:  
-        extra_plugins: |
-          conventional-changelog-conventionalcommits@6.1.0
-          @semantic-release/commit-analyzer
-          @semantic-release/release-notes-generator
-          @semantic-release/npm
-          @semantic-release/git
-          #conventional-changelog-eslint
-      env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        files: 'README.md'
+        search-text: '<REPLACED-BY-GHA>'
+        replacement-text: ${{ github.event.repository.name }}
+    - name: Show contents
+      run: cat main.tf
+    # - uses: actions/setup-node@v4
+    #   with:
+    #     node-version: 20
+    # - name: Semantic Release
+    #   uses: cycjimmy/semantic-release-action@v4
+    #   with:  
+    #     extra_plugins: |
+    #       conventional-changelog-conventionalcommits@6.1.0
+    #       @semantic-release/commit-analyzer
+    #       @semantic-release/release-notes-generator
+    #       @semantic-release/npm
+    #       @semantic-release/git
+    #       #conventional-changelog-eslint
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.TOKEN }}
         #NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
