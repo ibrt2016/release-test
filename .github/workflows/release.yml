@@ -19,7 +19,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: list 
-      run: ls -la
+      run: ls -la ${{ github.workspace }}
     - name: replace string in file
       uses: Nambers/ReplaceStringInFile@v1.3        
       with:
