@@ -1,7 +1,7 @@
 # release-test
 <!-- BEGIN_TF_DOCS -->
 ## Contributing
-
+ {0}
 If you want to contribute to this repository, feel free to use our [pre-commit](https://pre-commit.com/) git hook configuration
 which will help you automatically update and format some files for you by enforcing our Terraform code module best-practices.
 

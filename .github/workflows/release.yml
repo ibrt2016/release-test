@@ -24,6 +24,12 @@ jobs:
         files: 'main.tf'
         search-text: '{0}'
         replacement-text: ${{ github.event.repository.name }}
+    - name: Replace single file 2
+      uses: richardrigutins/replace-in-files@v2
+      with:
+        files: 'README.md'
+        search-text: '{0}'
+        replacement-text: ${{ github.event.repository.name }}
     - name: Show contents
       run: cat main.tf
     # - uses: actions/setup-node@v4
