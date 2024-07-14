@@ -28,7 +28,7 @@ jobs:
       uses: richardrigutins/replace-in-files@v2
       with:
         files: 'README.md'
-        search-text: '{0}'
+        search-text: "{0}"
         replacement-text: ${{ github.event.repository.name }}
     - name: Show contents
       run: cat main.tf
