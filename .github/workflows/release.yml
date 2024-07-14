@@ -20,12 +20,12 @@ jobs:
       uses: actions/checkout@v4
     - name: list 
       run: ls -la
-    - name: Replace single file
-      uses: richardrigutins/replace-in-files@v2
+    - name: Find and Replace
+      uses: jacobtomlinson/gha-find-replace@v3
       with:
-        files: './main.tf'
-        search-text: '{0}'
-        replacement-text: ${{ github.event.repository.name }}
+        find: "REPLACED_BY_GHA"
+        replace: ${{ github.event.repository.name }}
+        include: "main.tf" # Will match all README.md files in any nested directory
     - name: Replace single file 2
       uses: richardrigutins/replace-in-files@v2
       with:

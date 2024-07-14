@@ -10,7 +10,7 @@ terraform {
     organization = "hcta-azure-demo1221"
 
     workspaces {
-      name = "{0}-dev"
+      name = "REPLACED_BY_GHA-dev"
     }
   }
 }
