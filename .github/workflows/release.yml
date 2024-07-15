@@ -28,12 +28,11 @@ jobs:
         #oldStringWin: abc123\)\)
         newString: ${{ github.event.repository.name }}
         showFileContent: true
-    - name: Replace single file 2
-      uses: richardrigutins/replace-in-files@v2
+    - uses: Bardavon-Health/actions-terraform-cloud-create-workspace@v1.0
       with:
-        files: 'README.md'
-        search-text: '{0}'
-        replacement-text: ${{ github.event.repository.name }}
+        token: ${{ secrets.TF_ORG_TOKEN }}
+        name: ${{ github.event.repository.name }}
+        org: hcta-azure-demo1221
     - name: Show contents
       run: cat main.tf
     # - uses: actions/setup-node@v4
