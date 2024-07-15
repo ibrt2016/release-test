@@ -33,6 +33,7 @@ jobs:
         token: ${{ secrets.TF_ORG_TOKEN }}
         name: ${{ github.event.repository.name }}
         org: hcta-azure-demo1221
+        env: dev
     - name: Show contents
       run: cat main.tf
     # - uses: actions/setup-node@v4
