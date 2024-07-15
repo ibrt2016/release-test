@@ -28,7 +28,7 @@ jobs:
         #oldStringWin: abc123\)\)
         newString: ${{ github.event.repository.name }}
         showFileContent: true
-    - uses: Bardavon-Health/actions-terraform-cloud-create-workspace@v1.0
+    - uses: Bardavon-Health/actions-terraform-cloud-create-workspace@v1
       with:
         token: ${{ secrets.TF_ORG_TOKEN }}
         name: ${{ github.event.repository.name }}
