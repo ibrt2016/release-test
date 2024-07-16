@@ -34,6 +34,15 @@ jobs:
         name: ${{ github.event.repository.name }}
         org: hcta-azure-demo1221
         env: dev
+    - uses: mattias-fjellstrom/tfc-setup@v1
+      with:
+        token: ${{ secrets.TERRAFORM_CLOUD_TOKEN }}
+        organization: hcta-azure-demo1221
+        #project: ${{ env.PROJECT }}
+        workspace: ${{ github.event.repository.name }}
+    - uses: mattias-fjellstrom/tfc-apply-variable-set@v1
+      with:
+        variable_set: infra-subs
     - name: Show contents
       run: cat main.tf
     # - uses: actions/setup-node@v4
