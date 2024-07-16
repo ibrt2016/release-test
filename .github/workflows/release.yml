@@ -28,19 +28,22 @@ jobs:
         #oldStringWin: abc123\)\)
         newString: ${{ github.event.repository.name }}
         showFileContent: true
-    - uses: Bardavon-Health/actions-terraform-cloud-create-workspace@v1
+    - name: Create TFC Workspace
+      uses: Bardavon-Health/actions-terraform-cloud-create-workspace@v1
       with:
         token: ${{ secrets.TF_ORG_TOKEN }}
-        name: ${{ github.event.repository.name }}
+        name: ${{ github.event.repository.name }}-dev
         org: hcta-azure-demo1221
         env: dev
-    - uses: mattias-fjellstrom/tfc-setup@v1
+    - name: Setup TFC
+      uses: mattias-fjellstrom/tfc-setup@v1
       with:
         token: ${{ secrets.TF_ORG_TOKEN }}
         organization: hcta-azure-demo1221
         #project: ${{ env.PROJECT }}
-        workspace: ${{ github.event.repository.name }}
-    - uses: mattias-fjellstrom/tfc-apply-variable-set@v1
+        workspace: ${{ github.event.repository.name }}-dev
+    - name: Apply Variable Set to TFC Workspace
+      uses: mattias-fjellstrom/tfc-apply-variable-set@v1
       with:
         variable_set: infra-subs
     - name: Show contents
