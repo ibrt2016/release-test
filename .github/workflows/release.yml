@@ -21,6 +21,7 @@ jobs:
     - name: Set env
       run: |
         exp=${{ github.event.repository.name }} | cut -d "-" -f 1
+        echo $exp
         if [[ $exp == "release" ]]; then
           echo "TF_ENV=rel" >> $GITHUB_ENV
         fi
