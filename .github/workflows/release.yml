@@ -21,8 +21,11 @@ jobs:
     - name: Set env
       run: |
         echo ${{ github.event.repository.name }} | cut -d "-" -f 1
-        if [[ $(echo ${{ github.event.repository.name }} | cut -d "-" -f 1) == "release" ]]; then
+        if [[ $(echo ${{ github.event.repository.name }} | cut -d "-" -f 1) == "releas" ]]; then
           echo "TF_ENV=rel" >> $GITHUB_ENV
+        else
+          echo "Invalid Azure subscriotion in repo name!"
+          exit 1
         fi
     - name: list 
       run: ls -la ${{ github.workspace }}
