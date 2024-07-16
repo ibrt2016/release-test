@@ -20,7 +20,8 @@ jobs:
       uses: actions/checkout@v4
     - name: Set env
       run: |
-        if [[ ${{ github.event.repository.name }} | cut -d "-" -f 1 == "release" ]]; then
+        exp=${{ github.event.repository.name }} | cut -d "-" -f 1
+        if [[ $exp == "release" ]]; then
           echo "TF_ENV=rel" >> $GITHUB_ENV
         fi
     - name: list 
