@@ -20,8 +20,8 @@ jobs:
       uses: actions/checkout@v4
     - name: Set env
       run: |
-        if [[ ${{ github.event.repository.name }} == *"test"* ]]; then
-          echo "TF_ENV=test" >> $GITHUB_ENV
+        if [[ ${{ github.event.repository.name }} | cut -d "-" -f 1 == "release" ]]; then
+          echo "TF_ENV=rel" >> $GITHUB_ENV
         fi
     - name: list 
       run: ls -la ${{ github.workspace }}
