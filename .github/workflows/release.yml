@@ -46,6 +46,10 @@ jobs:
       uses: mattias-fjellstrom/tfc-apply-variable-set@v1
       with:
         variable_set: infra-subs
+    - name: Apply Variable Set to TFC Workspace 2
+      uses: mattias-fjellstrom/tfc-apply-variable-set@v1
+      with:
+        variable_set: env-vs
     - name: Show contents
       run: cat main.tf
     # - uses: actions/setup-node@v4
