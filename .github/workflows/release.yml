@@ -18,6 +18,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+    - name: Set env
+      run: |
+        if [[ ${{ github.event.repository.name }} == *"test"* ]]; then
+          echo "TF_ENV=test" >> $GITHUB_ENV
+        fi
     - name: list 
       run: ls -la ${{ github.workspace }}
     - name: replace string in file
@@ -50,6 +55,10 @@ jobs:
       uses: mattias-fjellstrom/tfc-apply-variable-set@v1
       with:
         variable_set: env-vs
+    - name: Apply Variable Set to TFC Workspace 3
+      uses: mattias-fjellstrom/tfc-apply-variable-set@v1
+      with:
+        variable_set: ${{ env.TF_ENV }}
     - name: Show contents
       run: cat main.tf
     # - uses: actions/setup-node@v4
