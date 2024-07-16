@@ -36,7 +36,7 @@ jobs:
         env: dev
     - uses: mattias-fjellstrom/tfc-setup@v1
       with:
-        token: ${{ secrets.TERRAFORM_CLOUD_TOKEN }}
+        token: ${{ secrets.TF_ORG_TOKEN }}
         organization: hcta-azure-demo1221
         #project: ${{ env.PROJECT }}
         workspace: ${{ github.event.repository.name }}
